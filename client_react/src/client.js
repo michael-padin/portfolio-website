@@ -7,6 +7,7 @@ export const client = sanityClient({
     apiVersion: '2022-05-08', 
     useCdn: true, 
     token: process.env.REACT_APP_SANITY_TOKEN,
+    ignoreBrowserTokenWarning: true
 })      
 
 
