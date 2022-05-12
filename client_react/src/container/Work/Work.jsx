@@ -23,7 +23,7 @@ const Work = () => {
   }, []);
 
   const handleWorkFilter = (item) => {
-    setActiveFilter(item);
+    setActiveFilter(item); 
   };
 
   return (
