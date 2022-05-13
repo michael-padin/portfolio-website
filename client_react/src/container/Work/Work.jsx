@@ -26,7 +26,7 @@ const Work = () => {
     setActiveFilter(item);
   };
 
-  return (
+  return ( 
     <>
       <h2 className="head-text">
         My Creative <span>Portfolio</span> <br />
