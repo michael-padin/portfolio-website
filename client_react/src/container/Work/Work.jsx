@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap} from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 
 import "./Work.scss";
@@ -23,21 +23,21 @@ const Work = () => {
   }, []);
 
   const handleWorkFilter = (item) => {
-    setActiveFilter(item); 
-    setAnimateCard([{y: 100, opacity: 0}])
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
 
     setTimeout(() => {
-      setAnimateCard([{y: 0, opacity: 1}]);
+      setAnimateCard([{ y: 0, opacity: 1 }]);
 
-      if(item === "All") {
+      if (item === "All") {
         setFilterWorks(works);
-      }else {
-        setFilterWorks(works.filter((work) => work.tags.includes(item) ))
+      } else {
+        setFilterWorks(works.filter((work) => work.tags.includes(item)));
       }
-    }, 500)
+    }, 500);
   };
 
-  return ( 
+  return (
     <>
       <h2 className="head-text">
         My Creative <span>Portfolio</span> <br />
@@ -121,4 +121,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Work, 'app__works'), 'work', 'app__primarybg');
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
