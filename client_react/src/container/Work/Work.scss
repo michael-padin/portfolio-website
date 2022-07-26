@@ -30,6 +30,7 @@
     }
     @media screen and (min-width: 2000px) {
       padding: 1rem 2rem;
+      border-radius: 0.85rem;
     }
   }
 
@@ -115,6 +116,7 @@
     margin: 1rem;
     font-family: var(--font-base);
     font-weight: 800;
+    transition: all 0.3s ease;
 
     svg {
       width: 50%;

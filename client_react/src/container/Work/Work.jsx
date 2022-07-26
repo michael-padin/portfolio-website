@@ -11,14 +11,14 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWorks] = useState([]);
+  const [filterWork, setFilterWork] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "works"]';
-    
+
     client.fetch(query).then((data) => {
       setWorks(data);
-      setFilterWorks(data);
+      setFilterWork(data);
     });
   }, []);
 
@@ -30,9 +30,9 @@ const Work = () => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
 
       if (item === "All") {
-        setFilterWorks(works);
+        setFilterWork(works);
       } else {
-        setFilterWorks(works.filter((work) => work.tags.includes(item)));
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
   };
@@ -77,7 +77,7 @@ const Work = () => {
               >
                 <a href={work.projectLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    whileInView={{ scale: [0.9, 1] }}
+                    whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
                     transition={{
                       duration: 0.25,
@@ -91,7 +91,7 @@ const Work = () => {
                 </a>
                 <a href={work.codeLink} target="_blank" rel="noreferrer">
                   <motion.div
-                    whileInView={{ scale: [0.9, 1] }}
+                    whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
                     transition={{
                       duration: 0.25,
