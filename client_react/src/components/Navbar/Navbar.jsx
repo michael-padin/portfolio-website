@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  HiMenuAlt4, HiX } from "react-icons/hi";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 import { images } from "../../constants";
@@ -26,33 +26,39 @@ const Navbar = () => {
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {toggle ? (
           <motion.div
-            initial = {{x: 300}}
-            animate = {{x: 0}}
-            transition={{ duration: 0.75, ease: "backOut"}}
+            initial={{ x: 300 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.75, ease: "backOut" }}
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-            {["home", "about", "work", "skills", "contact"].map((item) => (
-              <li className="app__flex p-text" key={`link-${item}`}>
-                <a onClick={() => setToggle(false)} href={`#${item}`}>{item}</a>
-              </li>
-            ))}
+              {["home", "about", "work", "skills", "contact"].map((item) => (
+                <li className="app__flex p-text" key={`link-${item}`}>
+                  <a onClick={() => setToggle(false)} href={`#${item}`}>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
-        ): <motion.div
-        initial = {{x: 1000}}
-        animate = {{x: 1000 }}
-        transition={{ duration: 0.75, ease: "backIn"}}
-      >
-        <HiX onClick={() => setToggle(false)} />
-        <ul>
-        {["Home", "About", "Work", "Skills", "Contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <a onClick={() => setToggle(false)} href={`#${item}`}>{item}</a>
-          </li>
-        ))}
-        </ul>
-      </motion.div>}
+        ) : (
+          <motion.div
+            initial={{ x: 1000 }}
+            animate={{ x: 1000 }}
+            transition={{ duration: 0.75, ease: "backIn" }}
+          >
+            <HiX onClick={() => setToggle(false)} />
+            <ul>
+              {["Home", "About", "Work", "Skills", "Contact"].map((item) => (
+                <li className="app__flex p-text" key={`link-${item}`}>
+                  <a onClick={() => setToggle(false)} href={`#${item}`}>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
       </div>
     </nav>
   );
