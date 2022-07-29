@@ -4,10 +4,23 @@ import { motion } from "framer-motion";
 import {AppWrap} from "../../wrapper";
 
 import "./Header.scss";
+import {images } from "../../constants"
 
 
+
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Header = () => {
+  const {node, sass, react, redux, git, typescript} = images;
   return (
     <div className="app__header app__flex">
       <motion.div
@@ -17,9 +30,8 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <div style={{ marginLeft: 20 }}>
-              <p className="p-text"> Hello, I am</p>
-              <h1 className="head-text"> Michael</h1>
+            <div>
+              <h1> Hello, I am Michael</h1>
             </div>
           </div>
 
@@ -30,7 +42,18 @@ const Header = () => {
         </div>
       </motion.div>
 
-
+      <motion.div
+        variants={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+      >
+        {[ redux, react, sass, node, git,].map((circle, index) => (
+          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+            <div className = "color-overlay"/>
+            <img src={circle} alt="circle" />
+          </div>
+        ))}
+      </motion.div>
       
     </div>
   );
