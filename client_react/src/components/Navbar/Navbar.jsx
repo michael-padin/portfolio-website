@@ -4,12 +4,31 @@ import { motion } from "framer-motion";
 
 import { images } from "../../constants";
 import "./Navbar.scss";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [navbar, setNavbar] = useState(false);
+
+  useEffect(() => {
+    changeNavbarBackground();
+
+    window.addEventListener("scroll", changeNavbarBackground)
+  },[])
+
+  
+  const changeNavbarBackground = () => {
+    if (window.scrollY >= 80){ 
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+
+  }
+
 
   return (
-    <nav className="app__navbar">
+    <nav className={navbar  ? "app__navbar active" : "app__navbar"}>
       <div className="app__navbar-logo">
         <img src={images.logo} alt="logo" />
       </div>
