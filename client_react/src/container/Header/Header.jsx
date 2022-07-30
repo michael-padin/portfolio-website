@@ -49,7 +49,7 @@ const Header = () => {
       >
         {[ redux, react, sass, node, git,].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <div className = "color-overlay"/>
+            {/* <div className = "color-overlay"/> */}
             <img src={circle} alt="circle" />
           </div>
         ))}

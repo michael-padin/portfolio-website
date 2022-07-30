@@ -38,9 +38,9 @@ const About = () => {
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
-            <h2 className="p-text" style={{ marginTop: 10 }}>
+            <p className="p-text" style={{ marginTop: 10 }}>
               {about.description}
-            </h2>
+            </p>
           </motion.div>
         ))}
       </div>

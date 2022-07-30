@@ -1,22 +1,28 @@
 .app__navbar {
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  transition: .3s ease-in;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(1, 1, 1, 0.18);
   position: fixed;
   z-index: 2;
+  left: 0;
+  right: 0;
+  transition: .3s ease-in;
+  padding: 1rem 2rem;
+  background-color: transparent;  
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+.app__navbar-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+ 
 }
 
 .app__navbar.active {
-  background-color: var(--primary-color);
+  background-color: var(--primary-background);
   color: var(--white-color);
 }
 
@@ -39,7 +45,7 @@
 .app__navbar-links {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end ;
   align-items: center;
   list-style: none;
 
