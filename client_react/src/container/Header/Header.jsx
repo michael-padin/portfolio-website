@@ -1,12 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import {AppWrap} from "../../wrapper";
+import { AppWrap } from "../../wrapper";
 
 import "./Header.scss";
-import {images } from "../../constants"
-
-
 
 const scaleVariants = {
   whileInView: {
@@ -20,9 +17,10 @@ const scaleVariants = {
 };
 
 const Header = () => {
-  const {node, sass, react, redux, git, typescript} = images;
   return (
     <div className="app__header app__flex">
+      <div className="right-circle" />
+      <div className="left-circle" />
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
@@ -31,13 +29,24 @@ const Header = () => {
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
             <div>
-              <h1> Hello, I am Michael</h1>
+              <h1>
+                Hi, I am Michael <br />
+                <span>Full stack </span>Developer
+              </h1>
             </div>
-          </div>
-
-          <div className="tag-cmp app__flex">
-            <p className="p-text"> Front End Developer</p>
-            <p className="p-text"> Backend Developer</p>
+            <p className = "p-text">
+              Solution-oriented and problem solver, experience building web
+              applications using MERN stack technologies. Have done numerous
+              projects involving frontend and backend development
+            </p>
+            <div className="app__header-button-area">
+              <button className="primary-button buttons" type="button">
+                About Me
+              </button>
+              <button className="secondary-button buttons" type="button">
+                Download CV
+              </button>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -46,17 +55,9 @@ const Header = () => {
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
-      >
-        {[ redux, react, sass, node, git,].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            {/* <div className = "color-overlay"/> */}
-            <img src={circle} alt="circle" />
-          </div>
-        ))}
-      </motion.div>
-      
+      ></motion.div>
     </div>
   );
 };
 
-export default AppWrap(Header, 'home');
+export default AppWrap(Header, "home");

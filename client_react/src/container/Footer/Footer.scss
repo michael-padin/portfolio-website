@@ -2,6 +2,8 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .app__footer-cards {
@@ -13,50 +15,69 @@
   margin: 4rem 2rem 2rem;
 
   .app__footer-card {
-    min-width: 290px;
+    min-width: 370px;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     display: flex;
 
     margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 10px;
     cursor: pointer;
-    background-color: #fef4f5;
+    background-color: var(--lightPurple-color);
 
     transition: all 0.3s ease-in-out;
 
     img {
       width: 40px;
       height: 40px;
-      margin: 0 0.7rem;
+      margin: 0 0.7rem 0 0;
     }
 
-    p {
-      font-weight: 600;
-    }
 
-    a {
+
+    a {      
+      font-size: 1rem;
       text-decoration: none;
     }
 
-    &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+    @media screen and (max-width: 768px) {
+      min-width: 100%;
     }
-
-    @media screen and (max-width: 450px) {
-      width: 100%;
-    }
+   
   }
-
   @media screen and (max-width: 768px) {
     width: 100%;
+    margin: auto 0;
   }
+
+}
+
+.app__footer-right-circle{
+  position: absolute;
+  right: 0;
+
+  border-radius: 50%;
+  bottom: 0;
+  width: 22rem;
+  height: 10rem;
+  background: #b673f8; 
+  filter: blur(250px);
+  z-index:-9;
+}
+.app__footer-left-circle{
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 20rem;
+  height: 10rem;
+  background: #4ca5ff; 
+  filter: blur(250px);
+  z-index:-9;
 }
 
 .app__footer-cards .app__footer-card:last-child {
-  background-color: #f2f7fb;
+  background-color: var(--lightBlue-color);
 }
 
 .app__footer-form {
@@ -68,10 +89,10 @@
     width: 100%;
 
     margin: 0.75rem;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
 
-    background-color: var(--primary-color);
+    // background-color: var(--secondary-background);
     transition: all 0.3s ease-in-out;
 
     input,
@@ -80,51 +101,48 @@
       padding: 0.95rem;
       border: none;
       border-radius: 7px;
-      background-color: var(--primary-color);
+      background-color: var(--black-color);
 
       font-family: var(--font-base);
-      color: var(--secondary-color);
+      color: var(--lightGray-color);
       outline: none;
 
-      @media  screen and (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         width: 100%;
       }
     }
 
     textarea {
+      min-height: 170px;
       height: 170px;
       resize: vertical;
     }
 
-    &:hover {
-      box-shadow: 0 0 25px var(--primary-color);
-    }
   }
 
   button {
-    padding: 1rem 2rem;
-    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
     border: none;
     background-color: var(--secondary-color);
 
+    font-size: 1rem;
     font-weight: 500;
     color: var(--white-color);
     outline: none;
     margin: 2rem 0 0 0;
 
-    font-family: var (--font-base);
+    font-family: var(--font-base);
     cursor: pointer;
 
-
     @media screen and (max-width: 768px) {
-        width: 100%;
-        text-align: center;
-        margin: 1rem 0;
+      width: 100%;
+      text-align: center;
+      margin: 1rem 0;
     }
   }
 
   @media screen and (max-width: 768px) {
     width: 100%;
   }
-    
 }

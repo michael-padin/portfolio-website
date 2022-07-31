@@ -14,11 +14,11 @@
   margin: 4rem 0 2rem;
 
   .app__work-filter-item {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    background-color: var(--white-color);
-    color: #000;
-    font-weight: 800;
+    min-width: 180px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    background-color: var(--secondary-background);
+    color: var(--lightBlue-color);
 
     cursor: pointer;
     transition: all 0.3s ease;
@@ -31,6 +31,9 @@
     @media screen and (min-width: 2000px) {
       padding: 1rem 2rem;
       border-radius: 0.85rem;
+    }
+    @media screen and (max-width: 576px) {
+      min-width: auto;
     }
   }
 
@@ -47,13 +50,15 @@
   align-items: center;
 
   .app__work-item {
-    width: 270px;
+    display: flex;
+    justify-content: flex-start;
+    width: 400px;
     flex-direction: column;
-
+    height: 450px;  
     margin: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: var(--white-color);
+    background-color: var(--secondary-background);
     color: #0000;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -67,9 +72,9 @@
       padding: 1.225rem;
       border-radius: 0.75rem;
     }
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 576px) {
       width: 100%;
-      margin: 1rem;
+      margin: 0;
     }
   }
 
@@ -127,22 +132,27 @@
 
 
 .app__work-content {
-  padding: 0.5rem;
+  padding: 1.25rem 0.5rem 0.5rem 0.5rem;
   width: 100%;
   position: relative;
   flex-direction: column;
 
   h4{
     margin-top: 1rem;
-    line-height: 1.5;
+    line-height: 1.5; 
+    color: var(--white-color);
   }
 
   .app__work-tag{
     position: absolute;
     padding: 0.5rem 1rem; 
     border-radius: 10px;
-    background-color: var(--white-color);
+    background-color: var(--secondary-background);
     top: -25px;
+
+    p {
+      color: var(--lightBlue-color);
+    }
   }
 
 

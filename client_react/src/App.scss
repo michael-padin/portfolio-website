@@ -1,7 +1,6 @@
 .app {
   background-color: var(--primary-color);
   font-family: var(--font-base);
-  
 }
 
 .app__whitebg {
@@ -60,7 +59,7 @@
   text-transform: capitalize;
 
   span {
-    background: -webkit-linear-gradient(180deg,#4ca5ff 2.34%,#b673f8 100.78%);
+    background: -webkit-linear-gradient(180deg, #4ca5ff 2.34%, #b673f8 100.78%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -79,14 +78,14 @@
   font-size: 1.25rem;
   text-align: left;
   line-height: 1.5;
-  color: #969BA5;
+  color: #969ba5;
   @media screen and (min-width: 2000px) {
     font-size: 1.75rem;
   }
 }
 
 .text-gradient {
-  background: linear-gradient(90deg,#4ca5ff 2.34%,#b673f8 100.78%);
+  background: linear-gradient(90deg, #4ca5ff 2.34%, #b673f8 100.78%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -104,6 +103,69 @@
   @media screen and (max-width: 450px) {
     font-size: 0.9rem;
   }
+}
+
+.right-circle {
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  bottom: 30%;
+  width: 22rem;
+  height: 10rem;
+  background: #b673f8; 
+  filter: blur(200px);
+
+  @media screen and (max-width: 768px) {
+    right: 0;
+    bottom: 0;
+    width: 10rem;
+    height: 10rem;
+    filter: blur(120px);
+
+  }
+}
+
+.left-circle {
+  position: absolute;
+  left: 20%;
+  border-radius: 50%;
+  top: 10%;
+  width: 22rem;
+  height: 10rem;
+  background: #4ca5ff; 
+  filter: blur(220px);
+
+  @media screen and (max-width: 768px) {
+    left: 0;
+    top: 0;
+    width: 10rem;
+    height: 10rem;
+    filter: blur(120px);
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+
+    
+}
+
+.primary-button {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.secondary-button {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .app__social {
@@ -182,6 +244,10 @@
       width: 20px;
       height: 20px;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
   }
 }
 

@@ -2,13 +2,19 @@
 
 :root {
   --font-base: 'Poppins', sans-serif;
+
   --primary-background: #0d1117;
   --secondary-background: #161b22;
+  
   --primary-color: #edf2f8;
-  --secondary-color: #313bac;
+  --secondary-color: #2190ff;
+
   --black-color: #030303;
+  --lightBlue-color: #D0DFFF;
   --lightGray-color: #e4e4e4;
-  --gray-color: #6b7688;
+  --purple-color: #b673f8;
+  --lightPurple-color: #e6cffc;
+  --gray-color:   #969BA5;
   --brown-color: #46364a;
   --white-color: #ffffff;
 }

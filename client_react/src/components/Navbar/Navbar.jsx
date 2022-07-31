@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-import { images } from "../../constants";
 import "./Navbar.scss";
 import { useEffect } from "react";
 
@@ -28,10 +27,11 @@ const Navbar = () => {
     <nav className = {navbar ? "app__navbar active" : "app__navbar"}>
       <div className="app__navbar-container">
         <div className="app__navbar-logo">
-          <img src={images.logo} alt="logo" />
+          {/* <img src={images.logo} alt="logo" /> */}
+          <h1 style = {{color: "white"}}>LOGO</h1>
         </div>
         <ul className="app__navbar-links">
-          {["home", "about", "work", "skills", "contact"].map((item) => (
+          {["home", "about", "work", "skills", "testimonial", "contact"].map((item) => (
             <li className="app__flex p-text" key={`link-${item}`}>
               <div />
               <a href={`#${item}`}>{item}</a>
