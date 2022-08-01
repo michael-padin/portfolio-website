@@ -73,7 +73,16 @@ const Skills = () => {
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
-                   
+                    {tooltip && (
+                      <ReactTooltip
+                        id={work.name}
+                        effect="solid"
+                        arrowColor="#fff"
+                        className="skills-tooltip"
+                      >
+                        {work.desc}
+                      </ReactTooltip>
+                    )}
                   </div>
                 ))}
               </motion.div>

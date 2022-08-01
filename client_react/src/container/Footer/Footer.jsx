@@ -3,7 +3,7 @@ import { client } from "../../client.js";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
-// import { client } from "../../client";
+import toast, { Toaster } from "react-hot-toast";
 
 import "./Footer.scss";
 
@@ -24,9 +24,14 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    setLoading(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || message === "") {
+      toast.error("Please fill all the fields");
+      return;
+    }
 
+    setLoading(true);
     const contact = {
       _type: "contact",
       name: name,
@@ -40,17 +45,33 @@ const Footer = () => {
       setTimeout(() => {
         setIsForSubmitted(false);
         setFormData({ name: "", email: "", message: "" });
-      }, 7000);
+      }, 5000);
     });
   };
 
   return (
     <>
-    
+      <Toaster
+        position="top-left"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#282c34",
+            color: "#fff",
+            padding: "20px",
+          },
+        }}
+        containerStyle={{
+          top: 90,
+          left: 90,
+        }}
+      />
       <h2 className="head-text">Take a coffee & chat with me</h2>
       <div className="app__footer-cards">
-      <div className="app__footer-right-circle" />
-      <div className="app__footer-left-circle" />
+        <div className="app__footer-right-circle" />
+        <div className="app__footer-left-circle" />
         <div className="app__footer-card buttons">
           <img src={images.email} alt="email" />
           <a href="mailto:padinmichael201@gmail.com" className="p-text">
@@ -66,7 +87,7 @@ const Footer = () => {
       </div>
 
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <form className="app__footer-form app__flex">
           <div className="app__flex">
             <input
               className="p-text"
@@ -75,6 +96,7 @@ const Footer = () => {
               placeholder="Your Name"
               value={name}
               onChange={handleChangeInput}
+              required
             />
           </div>
           <div className="app__flex">
@@ -85,6 +107,7 @@ const Footer = () => {
               placeholder="Your Email"
               value={email}
               onChange={handleChangeInput}
+              required
             />
           </div>
 
@@ -95,13 +118,14 @@ const Footer = () => {
               value={message}
               name="message"
               onChange={handleChangeInput}
+              required
             />
           </div>
 
-          <button type="button" className="p-text" onClick={handleSubmit}>
+          <button type="submit" className="p-text" onClick={handleSubmit}>
             {loading ? "Sending" : "Send Message"}
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text"> Thank you for getting in touch! </h3>
@@ -116,4 +140,3 @@ export default AppWrap(
   "contact",
   "app__whitebg"
 );
-

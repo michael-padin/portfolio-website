@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import myResume from "../../assets/MichaelPadin-resume.pdf"
 import { AppWrap } from "../../wrapper";
 
 import "./Header.scss";
@@ -34,17 +35,28 @@ const Header = () => {
                 <span>Full stack </span>Developer
               </h1>
             </div>
-            <p className = "p-text">
+            <p className="p-text">
               Solution-oriented and problem solver, experience building web
               applications using MERN stack technologies. Have done numerous
               projects involving frontend and backend development
             </p>
             <div className="app__header-button-area">
               <button className="primary-button buttons" type="button">
-                About Me
+                <a
+                  href="#about"
+                  style={{ textDecoration: "none", color: "#fff" }}
+                >
+                  About Me
+                </a>
               </button>
               <button className="secondary-button buttons" type="button">
-                Download CV
+              <a
+                  href={myResume}
+                  style={{ textDecoration: "none", color: "#2190ff" }}
+                  download = "MichaelPadin-resume.pdf"
+                >
+                  Download CV
+                </a>
               </button>
             </div>
           </div>

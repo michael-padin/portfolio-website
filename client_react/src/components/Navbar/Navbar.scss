@@ -1,14 +1,16 @@
 .app__navbar {
-  // border: 1px solid rgba(1, 1, 1, 0.18);
   position: fixed;
   z-index: 2;
   left: 0;
   right: 0;
-  transition: .3s ease-in;
+  transition: 0.2s ease-in;
   padding: 1rem 2rem;
-  background-color: transparent;  
-}
+  background-color: transparent;
 
+  @media (max-width: 768px) {
+    padding: 1rem 1rem;
+  }
+}
 
 .app__navbar-container {
   max-width: 1200px;
@@ -20,7 +22,6 @@
   @media screen and (max-width: 768px) {
     justify-content: space-between;
   }
- 
 }
 
 .app__navbar.active {
@@ -32,10 +33,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
   img {
-    width: 90px;
-    height: 20px;
+    height: 50px;
 
     @media screen and (min-width: 2000px) {
       width: 180px;
@@ -47,7 +51,7 @@
 .app__navbar-links {
   flex: 1;
   display: flex;
-  justify-content: flex-end ;
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
 
@@ -96,8 +100,8 @@
 }
 
 .app__navbar-menu {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   position: relative;
 
@@ -112,7 +116,7 @@
     color: var(--white-color);
   }
 
-  div {
+  .app__navbar-menu-container {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -129,13 +133,35 @@
     align-items: flex-end;
     flex-direction: column;
 
-    background: url("../../assets/bgWhite.png");
-    background-color: var(--white-color);
+    background-color: var(--primary-background);
     background-size: cover;
     background-repeat: repeat;
 
-    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+    // box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
 
+    div:nth-child(1) {
+      position: absolute;
+      border-radius: 50%;
+      background: #b673f8;
+
+      right: 0;
+      bottom: 5%;
+      width: 10rem;
+      height: 7rem;
+      filter: blur(120px);
+    }
+
+    div:nth-child(2) {
+      position: absolute;
+      border-radius: 50%;
+      background: #4ca5ff;
+
+      right: 40%;
+      bottom: 70%;
+      width: 5rem;
+      height: 2rem;
+      filter: blur(50px);
+    }
     svg {
       width: 35px;
       height: 35px;
@@ -172,11 +198,10 @@
       }
     }
     @media screen and(min-width: 900px) {
-        
-        display: none;
+      display: none;
     }
   }
   @media screen and(min-width: 900px) {
     display: none;
-}
+  }
 }

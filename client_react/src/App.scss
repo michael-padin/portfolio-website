@@ -160,12 +160,18 @@
   color: var(--white-color);
   background-color: var(--secondary-color);
   border: none;
+  transition:  0.5  s ease;
+  
+  &:hover {
+    background-color: #4da6ff;
+  }
 }
 
 .secondary-button {
   background-color: transparent;
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
+
 }
 
 .app__social {
