@@ -72,10 +72,11 @@
       padding: 1.225rem;
       border-radius: 0.75rem;
     }
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 768px) {
       width: 100%;
-      margin: 0;
+      margin: 0 0 1rem 0;
     }
+   
   }
 
   .app__work-img {
