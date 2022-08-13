@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import myResume from "../../assets/MichaelPadin-resume.pdf"
 import { AppWrap } from "../../wrapper";
 
 import "./Header.scss";
+import { client } from "../../client.js";
 
 const scaleVariants = {
   whileInView: {
@@ -18,6 +18,15 @@ const scaleVariants = {
 };
 
 const Header = () => {
+  const [resume, setResume] = useState({});
+  const fileLink = resume.resumeUrl?.asset.url;
+  useEffect(() => {
+    const resumeQuery = '*[_type == "resume"]{title, resumeUrl{asset->{url}}}';
+    client.fetch(resumeQuery).then((data) => {
+      setResume(Object.assign({}, data[0]));
+    });
+  }, []);
+
   return (
     <div className="app__header app__flex">
       <div className="right-circle" />
@@ -50,10 +59,11 @@ const Header = () => {
                 </a>
               </button>
               <button className="secondary-button buttons" type="button">
-              <a
-                  href={myResume}
+                <a
+                  href={fileLink}
                   style={{ textDecoration: "none", color: "#2190ff" }}
-                  download = "MichaelPadin-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Download CV
                 </a>
@@ -72,4 +82,4 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, "home");
+export default AppWrap(memo(Header), "home");
