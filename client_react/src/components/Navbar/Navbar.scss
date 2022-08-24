@@ -50,9 +50,9 @@
   justify-content: flex-end;
   align-items: center;
   list-style: none;
+  gap: 2rem;
 
   li {
-    margin: 0 1rem;
     cursor: pointer;
 
     flex-direction: column;
