@@ -150,6 +150,9 @@
       height: 50%;
     }
   }
+  @media screen and (max-width: 560px) {
+    opacity: 1;
+  }
 }
 
 .app__work-content {

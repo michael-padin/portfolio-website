@@ -69,7 +69,7 @@ const Work = () => {
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
                   transition={{
-                    duration: 0.25,
+                    duration: 0.09,
                     ease: "easeInOut",
                     staggerChildren: 0.5,
                   }}
