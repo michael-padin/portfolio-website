@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 
 import "./Header.scss";
+
 import { client } from "../../client.js";
+
+import { images } from "../../constants";
 
 const scaleVariants = {
   whileInView: {
@@ -20,6 +23,7 @@ const scaleVariants = {
 const Header = () => {
   const [resume, setResume] = useState({});
   const fileLink = resume.resumeUrl?.asset.url;
+
   useEffect(() => {
     const resumeQuery = '*[_type == "resume"]{title, resumeUrl{asset->{url}}}';
     client.fetch(resumeQuery).then((data) => {
@@ -40,7 +44,7 @@ const Header = () => {
           <div className="badge-cmp app__flex">
             <div>
               <h1>
-                Hi, I am Michael <br />
+                Hi, I'm Michael <br />
                 <span>Full stack </span>Developer
               </h1>
             </div>
@@ -75,9 +79,14 @@ const Header = () => {
 
       <motion.div
         variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
+        whileInView={{ y: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
         className="app__header-circles"
-      ></motion.div>
+      >
+        <div className="app__header-img app__flex ">
+          <img src={images.me} alt="hero profile" />
+        </div>
+      </motion.div>
     </div>
   );
 };

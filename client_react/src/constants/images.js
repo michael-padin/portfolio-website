@@ -14,14 +14,12 @@ import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
-
+import me from "../assets/me.png"
 import logo from '../assets/logo.png';
-
-import frontend from "../assets/social-media.jpg"
 
 
 const images = {
-  frontend,
+  me,
   email,
   mobile,
   api,
