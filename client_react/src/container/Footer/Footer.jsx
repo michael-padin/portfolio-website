@@ -13,6 +13,8 @@ const Footer = () => {
     email: "",
     message: "",
   });
+  const year = new Date().getFullYear();
+  
   const [isFormSubmitted, setIsForSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -73,13 +75,13 @@ const Footer = () => {
         <div className="app__footer-right-circle" />
         <div className="app__footer-left-circle" />
         <div className="app__footer-card buttons">
-          <img src={images.email} alt="email" />
+          <img src={images.email} alt="email" loading="lazy" />
           <a href="mailto:padinmichael201@gmail.com" className="p-text">
             padinmichael201@gmail.com
           </a>
         </div>
         <div className="app__footer-card buttons">
-          <img src={images.mobile} alt="mobile" />
+          <img src={images.mobile} alt="mobile" loading="lazy" />
           <a href="tel:+639984054200" className="p-text">
             +63 998 405 4200
           </a>
@@ -131,6 +133,12 @@ const Footer = () => {
           <h3 className="head-text"> Thank you for getting in touch! </h3>
         </div>
       )}
+      <div className="copyright">
+        <p style={{ color: "#ffff", fontSize: "0.8rem" }}>@{year} Michael</p>
+        <p style={{ color: "#ffff", fontSize: "0.8rem" }}>
+          All rights reserved
+        </p>
+      </div>
     </>
   );
 };

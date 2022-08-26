@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="app__navbar-container">
         <div className="app__navbar-logo">
           <a href="#home">
-            <img src={images.logo} alt="profile-logo" />
+            <img src={images.logo} alt="profile-logo" loading="lazy"/>
           </a>
         </div>
         <ul className="app__navbar-links">
