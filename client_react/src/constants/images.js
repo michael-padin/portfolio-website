@@ -14,7 +14,7 @@ import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
-import me from "../assets/me.png"
+import me from "../assets/me.webp"
 import logo from '../assets/logo.png';
 
 
