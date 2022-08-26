@@ -4,19 +4,11 @@ import { NavigationDots, SocialMedia } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
-    const year = new Date().getFullYear();
-
     return (
       <div id={idName} className={`app__container ${classNames}`}>
         <SocialMedia />
         <div className="app__wrapper app__flex">
           <Component />
-          <div className="copyright">
-            <p style={{ color: "#ffff", fontSize: "0.8rem" }}>@{year} Michael</p>
-            <p style={{ color: "#ffff", fontSize: "0.8rem" }}>
-              All rights reserved
-            </p>
-          </div>
         </div>
         <NavigationDots active={idName} />
       </div>

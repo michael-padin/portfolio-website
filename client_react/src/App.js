@@ -1,21 +1,32 @@
-import React from "react";
+import React, { lazy } from "react";
 
-import { About, Footer, Header, Skills, Testimonials, Work } from "./container";
 import { Navbar } from "./components";
-
 import "./App.scss";
+import { Suspense } from "react";
+
+const Header = lazy(() => import("./container/Header/Header"));
+  const About = lazy(() => import("./container/About/About"));
+  const Work = lazy(() => import("./container/Work/Work"));
+  const Skills = lazy(() => import("./container/Skills/Skills"));
+  const Testimonials = lazy(() =>
+    import("./container/Testimonials/Testimonials")
+  );
+  const Footer = lazy(() => import("./container/Footer/Footer"));
 
 const App = () => {
+  
   return (
-    <div className="app">
-      <Navbar />
-      <Header />
-      <About />
-      <Work />
-      <Skills />
-      <Testimonials />
-      <Footer />
-    </div>
+    <Suspense fallback={<div></div>}>
+      <div className="app">
+        <Navbar />
+        <Header />
+        <About />
+        <Work />
+        <Skills />
+        <Testimonials />
+        <Footer />
+      </div>
+    </Suspense>
   );
 };
 
