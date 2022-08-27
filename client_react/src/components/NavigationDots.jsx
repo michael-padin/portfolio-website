@@ -1,4 +1,5 @@
 import React from "react";
+import { memo } from "react";
 
 const NavigationDots = ({ active }) => {
   
@@ -17,4 +18,4 @@ const NavigationDots = ({ active }) => {
   );
 };
 
-export default NavigationDots;
+export default memo(NavigationDots);

@@ -1,4 +1,5 @@
 import React from "react";
+import { memo } from "react";
 import {  BsGithub, BsLinkedin} from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -24,4 +25,4 @@ const SocialMedia = () => {
   );
 };
 
-export default SocialMedia;
+export default memo(SocialMedia);
