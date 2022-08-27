@@ -16,11 +16,8 @@ import sass from '../assets/sass.png';
 import typescript from '../assets/typescript.png';
 import me from "../assets/me.webp"
 import logo from '../assets/logo.png';
-import heroSection from '../assets/hero-section.webp';
-
 
 const images = {
-  heroSection,
   me,
   email,
   mobile,
