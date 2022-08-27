@@ -13,12 +13,11 @@ const Testimonials = () => {
 
   const handleClick = (index) => {
     setCurrentIndex(index);
-   
-  }
+  };
 
   useEffect(() => {
     const testimonialsQuery = '*[_type == "testimonials"]';
-    
+
     client.fetch(testimonialsQuery).then((data) => {
       setTestimonials(data);
     });
@@ -30,8 +29,11 @@ const Testimonials = () => {
     <>
       {testimonials.length && (
         <>
+          <h2 className="head-text">
+            What <span>Clients</span> think of me
+          </h2>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(test.imgurl)} alt="testimonial" loading="lazy"/>
+            <img src={urlFor(test.imgurl)} alt="testimonial" loading="lazy" />
             <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
               <div>
@@ -39,20 +41,35 @@ const Testimonials = () => {
                 <h5 className="p-text">{test.company}</h5>
               </div>
             </div>
+          </div>
+          <div className="app__testimonial-btns app__flex">
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === 0
+                    ? testimonials.length - 1
+                    : currentIndex - 1
+                )
+              }
+            >
+              <HiChevronLeft />
             </div>
-
-            <div className="app__testimonial-btns app__flex">
-              <div className="app__flex" onClick={() => handleClick (currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
-                <HiChevronLeft />
-              </div>
-              <div className="app__flex" onClick={() => handleClick (currentIndex ===  testimonials.length - 1 ?  0: currentIndex +  1)}>
-                <HiChevronRight  />
-              </div>
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === testimonials.length - 1
+                    ? 0
+                    : currentIndex + 1
+                )
+              }
+            >
+              <HiChevronRight />
             </div>
+          </div>
         </>
       )}
-      
-  
     </>
   );
 };
