@@ -37,7 +37,7 @@ const Header = () => {
       <div className="left-circle" />
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        transition={{ delay: 0.5 }}
         className=" app__header-info"
       >
         <div className="app__header-badge">
@@ -80,7 +80,7 @@ const Header = () => {
       <motion.div
         variants={scaleVariants}
         whileInView={{ y: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
+        transition={{ delay: 0.5 }}
         className="app__header-circles"
       >
         <div className="app__header-img app__flex ">
