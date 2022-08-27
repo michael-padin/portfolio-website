@@ -33,7 +33,7 @@ const Testimonials = () => {
             What <span>Clients</span> think of me
           </h2>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(test.imgurl)} alt="testimonial" loading="lazy" />
+            <img src={urlFor(test.imgurl)} alt="testimonial" loading="lazy" height = {90} width = {90}/>
             <div className="app__testimonial-content">
               <p className="p-text">{test.feedback}</p>
               <div>

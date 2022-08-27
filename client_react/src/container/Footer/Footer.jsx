@@ -75,13 +75,13 @@ const Footer = () => {
         <div className="app__footer-right-circle" />
         <div className="app__footer-left-circle" />
         <div className="app__footer-card buttons">
-          <img src={images.email} alt="email" loading="lazy" />
+          <img src={images.email} alt="email" loading="lazy" height = {40} width = {40} />
           <a href="mailto:padinmichael201@gmail.com" className="p-text">
             padinmichael201@gmail.com
           </a>
         </div>
         <div className="app__footer-card buttons">
-          <img src={images.mobile} alt="mobile" loading="lazy" />
+          <img src={images.mobile} alt="mobile" loading="lazy" height = {40} width = {40} />
           <a href="tel:+639984054200" className="p-text">
             +63 998 405 4200
           </a>
