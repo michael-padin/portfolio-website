@@ -29,3 +29,27 @@
 body,html {
   background-color: var(--primary-background);
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  transition: width 2s;
+}
+
+
+::-webkit-scrollbar:hover {
+  width: 15px;
+}
+
+::-webkit-scrollbar {
+  width:4px;
+  z-index: 99999;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(33, 144, 255);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
