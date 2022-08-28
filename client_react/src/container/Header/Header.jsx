@@ -85,7 +85,7 @@ const Header = () => {
         className="app__header-circles"
       >
         <div className="app__header-img app__flex ">
-          <img src={images.me} alt="hero profile" height = {529} width = {552 }/>
+          <img src={images.me} alt="hero profile"/>
         </div>
       </motion.div>
     </div>

@@ -1,7 +1,6 @@
 #home {
   position: relative;
 
-  // background: url("../../assets/header-background.png");
   background-color: var(--primary-background);
   filter: blur(1) px;
   background-size: cover;
@@ -24,7 +23,7 @@
   height: 100%;
   flex-direction: row;
   max-width: 1200px;
-  padding: 6rem 0;
+  padding: 6rem 0 3rem 0;
 
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
@@ -92,20 +91,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 1rem;
 
       button {
         font-size: 1rem;
         font-weight: 600;
-        margin: 0 1rem 0 0;
-
-        @media screen and (max-width: 765px) {
-          margin: 0 1rem 0 0;
-          min-width: 100px;
-        }
       }
+      @media screen and (max-width:  375px) {
+         flex-direction: column;
+         width: 100%;
 
-      @media screen and (max-width: 765px) {
-        
+         button {
+          width: 100%
+         }
       }
     }
   }
@@ -127,7 +125,6 @@
   height: 100%;
   margin-left: 1rem;
 
- 
   .circle-cmp {
     width: 100px;
     height: 100px;
@@ -153,6 +150,11 @@
       margin: 1rem;
     }
   }
+  @media screen and (max-width: 768px) {
+    div {
+      margin: 0;
+    }
+  }
 }
 
 .app__header-img {
@@ -161,12 +163,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    margin-left: 2.5rem;;
+  margin-left: 2.5rem;
   position: relative;
 
   img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
   }
   .overlay_circle {
@@ -181,5 +183,8 @@
 
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0;
   }
 }
