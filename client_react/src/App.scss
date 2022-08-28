@@ -34,6 +34,10 @@
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
   }
+  @media screen and (max-width: 320px) {
+    padding: 4rem 0.5rem;
+    
+  }
 }
 
 .copyright {
@@ -69,9 +73,6 @@
     font-size: 4rem;
   }
 
-  @media screen and (max-width: 450px) {
-    font-size: 2rem;
-  }
 }
 
 .p-text {
@@ -154,6 +155,9 @@
   cursor: pointer;
 
 
+  @media screen and (max-width: 425px) {
+    min-width: 150px;
+  }
 }
 
 .primary-button {

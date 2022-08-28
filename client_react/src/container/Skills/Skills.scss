@@ -5,8 +5,11 @@
 }
 
 .app__skills-container {
+  background-color: var(--secondary-background);
   width: 80%;
   margin: 3rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 12px;
 
   display: flex;
   flex-direction: row;
@@ -16,13 +19,16 @@
     width: 100%;
     flex-direction: column;
   }
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+  }
 }
 
 .app__skills-list {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-start;
 
   margin-right: 5rem;
