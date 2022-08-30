@@ -237,6 +237,7 @@
 }
 
 .app__navigation {
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,8 +246,8 @@
   padding: 1rem;
 
   .app__navigation-dot {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background-color: #cbcbcb;
     margin: 0.5rem;
