@@ -6,9 +6,9 @@
 
 .app__skills-container {
   background-color: var(--secondary-background);
-  width: 80%;
+  width: 90%;
   margin: 3rem auto 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 12px;
 
   display: flex;
@@ -22,34 +22,40 @@
   @media screen and (max-width: 1440px) {
     width: 100%;
   }
+  @media screen and (max-width: 419px) {
+    padding: 1rem;
+  }
 }
 
 .app__skills-list {
   flex: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-start;
-
+  gap : 1rem;
   margin-right: 5rem;
 
   @media screen and (max-width: 900px) {
-    margin-right: 0;
+    margin-right: 0;  
     justify-content: center;
     align-items: center;
   }
+  @media screen and (min-width: 2000px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
 }
 
 .app__skills-item {
-  min-width: 130px;
   flex-direction: column;
   text-align: center;
-  margin: 1rem;
   transition: all 0.3s ease-in-out;
 
   div {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     background-color: var(--white-color);
@@ -71,23 +77,30 @@
       width: 70px;
       height: 70px;
     }
+
+    @media screen and (max-width: 419px) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   p {
     font-weight: 500;
     margin-top: 0.5rem;
+    font-size: 1rem;
   }
 
   @media screen and (min-width: 2000px) {
-    margin: 1rem 2rem;
-
     p {
       margin-top: 1.5rem;
+      font-size: 1.5rem;
     }
   }
-  @media screen and (max-width: 576px) {
-    min-width: 100px;
-    margin: .25rem;
+
+
+
+  @media screen and (max-width: 419px) {
+    min-width: 90px;
     p {
       font-size: 1rem;
     }
