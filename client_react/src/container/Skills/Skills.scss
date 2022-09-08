@@ -6,7 +6,7 @@
 
 .app__skills-container {
   background-color: var(--secondary-background);
-  width: 90%;
+  width: 80%;
   margin: 3rem auto 0 auto;
   padding: 2rem;
   border-radius: 12px;
@@ -16,14 +16,9 @@
   justify-content: center;
 
   @media screen and (max-width: 900px) {
+    padding: 1rem;
     width: 100%;
     flex-direction: column;
-  }
-  @media screen and (max-width: 1440px) {
-    width: 100%;
-  }
-  @media screen and (max-width: 419px) {
-    padding: 1rem;
   }
 }
 
@@ -34,18 +29,17 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-start;
-  gap : 1rem;
+  gap: 1rem;
   margin-right: 5rem;
 
   @media screen and (max-width: 900px) {
-    margin-right: 0;  
+    margin-right: 0;
     justify-content: center;
     align-items: center;
   }
   @media screen and (min-width: 2000px) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-
 }
 
 .app__skills-item {
@@ -96,8 +90,6 @@
       font-size: 1.5rem;
     }
   }
-
-
 
   @media screen and (max-width: 419px) {
     min-width: 90px;

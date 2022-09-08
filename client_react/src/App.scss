@@ -1,6 +1,7 @@
 .app {
   background-color: var(--primary-background);
   font-family: var(--font-base);
+  position: relative;
 }
 
 .app__whitebg {
@@ -13,10 +14,18 @@
 
 .app__container {
   width: 100%;
+  padding: 0 70px;
   min-height: 100vh;
-
   display: flex;
   flex-direction: row;
+  margin: auto;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 1rem;
+    padding: 0;
+  }
 }
 
 .app__flex {
@@ -32,11 +41,10 @@
   padding: 4rem 2rem;
 
   @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
+    padding: 4rem 1rem 1rem;
   }
   @media screen and (max-width: 320px) {
     padding: 4rem 0.5rem;
-    
   }
 }
 
@@ -72,7 +80,6 @@
   @media screen and (min-width: 2000px) {
     font-size: 4rem;
   }
-
 }
 
 .p-text {
@@ -113,7 +120,7 @@
   bottom: 30%;
   width: 22rem;
   height: 10rem;
-  background: #b673f8; 
+  background: #b673f8;
   filter: blur(200px);
 
   @media screen and (max-width: 768px) {
@@ -122,7 +129,6 @@
     width: 10rem;
     height: 10rem;
     filter: blur(120px);
-
   }
 }
 
@@ -133,7 +139,7 @@
   top: 10%;
   width: 22rem;
   height: 10rem;
-  background: #4ca5ff; 
+  background: #4ca5ff;
   filter: blur(220px);
 
   @media screen and (max-width: 768px) {
@@ -154,7 +160,6 @@
   border-radius: 9999px;
   cursor: pointer;
 
-
   @media screen and (max-width: 425px) {
     min-width: 150px;
   }
@@ -164,8 +169,8 @@
   color: var(--white-color);
   background-color: var(--secondary-color);
   border: none;
-  transition:  0.5  s ease;
-  
+  transition: 0.5 s ease;
+
   &:hover {
     background-color: #4da6ff;
   }
@@ -175,15 +180,16 @@
   background-color: transparent;
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color);
-
 }
 
 .app__social {
+  position: fixed;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-
+  left: 0;
+  bottom: 0;
   padding: 1rem;
 
   div {
@@ -237,12 +243,14 @@
 }
 
 .app__navigation {
-  z-index: 4;
   display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(50%);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   padding: 1rem;
 
   .app__navigation-dot {
