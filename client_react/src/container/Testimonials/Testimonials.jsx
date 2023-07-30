@@ -21,7 +21,6 @@ const Testimonials = () => {
 		client.fetch(testimonialsQuery).then((data) => {
 			setTestimonials(data);
 		});
-    console.log(urlFor(test?.imgurl));
 	}, []);
 
 	const test = testimonials[currentIndex];
