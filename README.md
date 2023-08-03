@@ -13,8 +13,6 @@
 ![image](https://user-images.githubusercontent.com/75446003/187375099-d7a41727-fffe-442b-b3dc-09d4ac7a18e7.png)
 ![image](https://user-images.githubusercontent.com/75446003/187375355-ba877611-8240-4b5a-9898-1521b71a6c01.png)
 
-
-
 ## Built With
 
 - JavaScript
